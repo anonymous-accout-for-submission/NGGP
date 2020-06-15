@@ -1,14 +1,21 @@
-# ggp_dpl: The Normal-Generalised Gamma-Pareto process
+# The Normal-Generalised Gamma-Pareto process
 Code for the paper: "The Normal-Generalised Gamma-Pareto process: A novel pure-jump Levy process with flexible tail and jump-activity properties".
 
+## Requirements
 This code buids on the Particles Library (https://github.com/nchopin/particles).
+```
+python >= 3.7
+particles
+pandas
+```
+
 
 ## Datasets:
 All return data can be found in the folder data/, where there are two folders:
 
   - data_minute_tech: Dataset composed of the time-series of the stock prices of six large technology companies: Apple (AAPL), Amazon (AMZN), Facebook (FB), Google (GOOG), Microsoft (MSFT) and Netflix (NFLX). The data are sampled every minute from the 10th of July 2019 until the 22nd of January 2020, with approximately 50,000 time points. We subsample 1500 observations as training data to estimate the parameters of each model, and use the rest of the observations as test data.
 
-  - oxford: Dataset obtained from the Realized library (https://realized.oxford-man.ox.ac.uk). We collected 14 daily stock data from 05-11-2007 to 07-10-2011 (around the time of subprime mortgage crisis)
+  - oxford: Dataset obtained from the Realized library (https://realized.oxford-man.ox.ac.uk), put into ```data``` folder, and run ```process_oxford.py```rd-man.ox.ac.uk). We collected 14 daily stock data from 05-11-2007 to 07-10-2011 (around the time of subprime mortgage crisis) Download the csv file from the link, put into ```data``` folder, and run ```process_oxford.py```
 
 ## IID Simple model
 
@@ -71,3 +78,36 @@ to run the assess script with all models on a given dataset (here FB)
 ### Plots of the paper:
 
 The results of our simulations for the iid simple model can be found in simple/plots
+
+## Levy-driven stochastic volatility model
+The codes and scripts are located in ```complex``` folder.
+
+### Available models
+  - Normal-Gamma process (```gamma_driven_ldsv.py```)
+  - Normal-Generalised Gamma-Pareto process (```gbfry_driven_ldsv.py```)
+  
+### Running the sampler
+```
+python run.py --filename filename --model (gbfry or gamma) \
+              --Nx num_particles --burnin burnin \
+              --niter num_iterations \
+              --run_name chain1
+```
+Put ```gbfry``` for NGGP and ```gamma``` for normal-Gamma process.
+
+### Plotting and assessing
+To compute the metrics (only for ```oxford``` data having ground-truth states), 
+```
+python assess.py --filename filename --run_names chain1 chain2 chain3
+```
+
+To see the parameter estimates,
+```
+python plot_chains.py --filename filename --model (gbfry or gamma) \
+                      --run_names chain1 chain2 chain3
+```
+
+To see the recovered states,
+```
+python plot_states.py --filename filename --run_names chain1 chain2 chain3
+```
