@@ -15,7 +15,7 @@ All return data can be found in the folder data/, where there are two folders:
 
   - data_minute_tech: Dataset composed of the time-series of the stock prices of six large technology companies: Apple (AAPL), Amazon (AMZN), Facebook (FB), Google (GOOG), Microsoft (MSFT) and Netflix (NFLX). The data are sampled every minute from the 10th of July 2019 until the 22nd of January 2020, with approximately 50,000 time points. We subsample 1500 observations as training data to estimate the parameters of each model, and use the rest of the observations as test data.
 
-  - oxford: Dataset obtained from the Realized library (https://realized.oxford-man.ox.ac.uk), put into ```data``` folder, and run ```process_oxford.py```rd-man.ox.ac.uk). We collected 14 daily stock data from 05-11-2007 to 07-10-2011 (around the time of subprime mortgage crisis) Download the csv file from the link, put into ```data``` folder, and run ```process_oxford.py```
+  - oxford: Dataset obtained from the Realized library (https://realized.oxford-man.ox.ac.uk), put into ```data``` folder, and run ```process_oxford.py```). We collected 14 daily stock data from 05-11-2007 to 07-10-2011 (around the time of subprime mortgage crisis) Download the csv file from the link, put into ```data``` folder, and run ```process_oxford.py```
 
 ## IID Simple model
 
