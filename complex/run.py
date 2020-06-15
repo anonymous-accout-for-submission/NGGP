@@ -17,13 +17,12 @@ import particles.distributions as dists
 
 from gamma_driven_sv import GammaDrivenSV
 from gbfry_driven_sv import GBFRYDrivenSV
-from ggp_driven_sv import GGPDrivenSV
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument('--filename', type=str, default=None)
 parser.add_argument('--model', type=str, default='gbfry',
-        choices=['gbfry', 'gamma', 'ggp'])
+        choices=['gbfry', 'gamma'])
 parser.add_argument('--norm', action='store_false', default=True)
 
 # for PMMH
@@ -50,8 +49,6 @@ with open(os.path.join(args.filename), 'rb') as f:
 
 if args.model == 'gamma':
     ssm_cls = GammaDrivenSV
-elif args.model == 'ggp':
-    ssm_cls = GGPDrivenSV
 elif args.model == 'gbfry':
     ssm_cls = GBFRYDrivenSV
 else:
