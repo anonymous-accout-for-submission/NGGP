@@ -1,0 +1,10 @@
+{
+  "filename": "../data/data_minute_random/FB_min_train.pkl",
+  "model": "gamma",
+  "save_states": false,
+  "Nx": 1500,
+  "burnin": null,
+  "niter": 5000,
+  "verbose": 100,
+  "run_name": "chain2"
+}

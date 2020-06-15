@@ -1,0 +1,8 @@
+Dataset composed of the time-series of the stock prices of six large technology companies: 	- Apple (AAPL) 
+	- Amazon (AMZN)
+	- Facebook (FB)
+	- Google (GOOG) 
+	- Microsoft (MSFT)
+	- Netflix (NFLX) 
+
+The data are sampled every minute from the 10th of July 2019 until the 22nd of January 2020, with approximately 50,000 time points. We subsample 1500 observations as training data (*_min_train.pkl) to estimate the parameters of each model, and use the rest of the observations as test data (*_min_test.pkl).

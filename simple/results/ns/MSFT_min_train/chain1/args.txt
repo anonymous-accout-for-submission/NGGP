@@ -1,0 +1,10 @@
+{
+  "filename": "../data/data_minute_random/MSFT_min_train.pkl",
+  "model": "ns",
+  "save_states": false,
+  "Nx": 2500,
+  "burnin": null,
+  "niter": 5000,
+  "verbose": 100,
+  "run_name": "chain1"
+}
